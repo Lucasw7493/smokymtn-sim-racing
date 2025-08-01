@@ -463,3 +463,71 @@ p {
 .facebook-logo:hover {
   transform: scale(1.1);
 }
+/* ==== FIXED RESPONSIVE NAV ==== */
+/* ==== FIXED RESPONSIVE NAV ==== */
+.menu-toggle {
+  display: block;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  z-index: 1100;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Hide the nav by default on mobile */
+#navbarMenu {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  background-color: #000;
+  padding: 1rem 0;
+  width: 100%;
+  gap: 1rem;
+}
+
+/* Show nav when toggled open */
+#navbarMenu.open {
+  display: flex;
+}
+
+/* Desktop view: show nav always, hide hamburger */
+@media (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  #navbarMenu {
+    display: flex !important;
+    flex-direction: row;
+    justify-content: center;
+    background: none;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+
+  #navbarMenu ul {
+    display: flex;
+    gap: 1.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  #navbarMenu li {
+    margin: 0;
+  }
+
+  #navbarMenu a {
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  #navbarMenu a:hover {
+    color: red;
+  }
+}

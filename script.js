@@ -1,14 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
   // ===== HAMBURGER MENU TOGGLE =====
-  const hamburger = document.querySelector('.hamburger');
-  const navList = document.querySelector('.nav-list');
+  const hamburger = document.getElementById('menuToggle');
+  const nav = document.getElementById('navbarMenu');
 
-  if (hamburger && navList) {
+  if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
-      const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-      hamburger.setAttribute('aria-expanded', String(!isExpanded));
-      navList.classList.toggle('nav-open');
+      nav.classList.toggle('open');
     });
+
+    // Always start closed
+    nav.classList.remove('open');
   }
 
   // ===== IMAGE SLIDESHOW =====
@@ -22,6 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
-    }, 5000); // 5 seconds per slide
+    }, 5000);
   }
 });
