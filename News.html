@@ -61,7 +61,12 @@
 <body>
   <header class="header">
     <h1 id="site-title">Smoky Mtn Sim Racing</h1>
-    <nav class="main-nav">
+
+    <!-- Hamburger Menu Button -->
+    <button class="menu-toggle" id="menuToggle">&#9776;</button>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="navbarMenu">
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="standings.html">Standings</a></li>
@@ -101,5 +106,19 @@
     <p>Follow us on <a href="https://facebook.com" target="_blank"><img src="facebook.jpg" class="facebook-logo" alt="Facebook"></a></p>
     <p>&copy; 2025 Smoky Mtn Sim Racing</p>
   </footer>
+
+  <!-- Toggle Menu Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const toggle = document.getElementById('menuToggle');
+      const nav = document.getElementById('navbarMenu');
+
+      nav.classList.remove('open'); // Ensure menu is closed on load
+
+      toggle.addEventListener('click', function () {
+        nav.classList.toggle('open');
+      });
+    });
+  </script>
 </body>
 </html>
