@@ -30,8 +30,7 @@ html {
 
 /* ==== HEADER ==== */
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-              url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
   border-bottom: 3px solid rgb(255, 0, 0);
   padding: 1rem 0;
   position: sticky;
@@ -92,30 +91,44 @@ html {
   border: none;
   color: red;
   cursor: pointer;
+  z-index: 1100;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-
   .nav-list {
     display: none;
     flex-direction: column;
     align-items: center;
     gap: 1rem;
     margin-top: 1rem;
+    background-color: rgba(0, 0, 0, 0.95);
+    padding: 1.5rem;
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+    width: 100%;
   }
 
   .nav-list.nav-open {
     display: flex;
   }
+
+  .main-nav ul {
+    flex-direction: column;
+  }
+
+  .main-nav a {
+    font-size: 1.1rem;
+    padding: 0.5rem 0;
+    display: block;
+  }
 }
 
 /* ==== HERO SECTION ==== */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
-              url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
   height: 50vh;
   position: relative;
   display: flex;
@@ -143,8 +156,7 @@ html {
 
 /* ==== HERO TEXT BELOW ==== */
 .hero-text-section {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-              url('bristol-night-iracing.webp') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('bristol-night-iracing.webp') center/cover no-repeat;
   background-attachment: fixed;
   text-align: center;
   padding: 2rem 1rem 3rem;
@@ -195,7 +207,7 @@ html {
   transform: scale(1.05);
 }
 
-/* ==== GENERAL SECTIONS ==== */
+/* ==== SECTION PADDING ==== */
 section:not(.hero-text-section) {
   padding: 3rem 1rem;
 }
@@ -212,8 +224,7 @@ p {
 
 /* ==== BROADCAST SECTION ==== */
 .broadcast {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)),
-              url('channels4_banner.jpg') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('channels4_banner.jpg') center/cover no-repeat;
   color: #fff;
   border-top: #ff1a1a solid 2px;
 }
@@ -243,8 +254,7 @@ p {
 
 /* ==== FOOTER ==== */
 .footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-              url('smsr nav banner.png') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('smsr nav banner.png') center/cover no-repeat;
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
@@ -397,6 +407,7 @@ p {
   }
 }
 
+/* ==== ICONS ==== */
 .discord-logo {
   max-width: 100px;
   display: block;

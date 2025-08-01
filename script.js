@@ -1,18 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // HAMBURGER MENU TOGGLE
+  const hamburger = document.querySelector('.hamburger');
+  const navList = document.querySelector('.nav-list');
+
+  if (hamburger && navList) {
+    hamburger.addEventListener('click', () => {
+      navList.classList.toggle('nav-open');
+    });
+  }
+
+  // IMAGE SLIDESHOW
   const slides = document.querySelectorAll('.carousel-slide');
   let currentSlide = 0;
 
-  // Initial setup
-  slides[currentSlide].classList.add('active');
-
-  setInterval(() => {
-    // Remove 'active' class from current
-    slides[currentSlide].classList.remove('active');
-
-    // Increment or loop back to start
-    currentSlide = (currentSlide + 1) % slides.length;
-
-    // Add 'active' class to new current
+  if (slides.length > 0) {
     slides[currentSlide].classList.add('active');
-  }, 5000); // 5 seconds per slide
+
+    setInterval(() => {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }, 5000);
+  }
 });
