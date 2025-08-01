@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Smoky Mtn Sim Racing - A NASCAR-inspired iRacing league featuring competitive racing, live broadcasts, and a vibrant community." />
+  <title>Smoky Mtn Sim Racing | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="header" role="banner">
+    <div class="container">
+      <h1 id="site-title">Smoky Mtn Sim Racing</h1>
+      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
+      <nav class="main-nav" aria-label="Main navigation">
+        <ul class="nav-list">
+          <li><a href="home.html" class="active">Home</a></li>
+          <li><a href="standings.html">Standings</a></li>
+          <li><a href="schedule.html">Schedule</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero-text-section">
+    <div class="container hero-text">
+      <h2>Welcome to Smoky Mtn Sim Racing</h2>
+      <p>
+        🏆 Compete in a 17-Race Season<br>
+        📺 Watch Live Every Thursday starting on Feb 12th at 9 PM ET<br>
+        🔧 Fixed Setups | 💸 Cash Prizes | 🏁 Custom Trophies | 🛡️ 6k iRating Cap
+      </p>
+      <p>
+        SMSR brings high-octane sim racing action inspired by NASCAR. Compete in our structured, professional league featuring live race broadcasts, fair rule enforcement, and big-time competition.
+      </p>
+    </div>
+  </section>
+
+  <section id="register" class="registration" aria-label="Driver registration">
+    <div class="container">
+      <h2>🏁 Driver Registration</h2>
+      <p>
+        Ready to race? Register by joining our Discord and filling out our driver registration form!
+      </p>
+      <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener" class="cta-button">Join Our Discord</a>
+      <div class="icon-row">
+        <span>🔧</span>
+        <span>💬</span>
+        <span>🏁</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="broadcasts" class="broadcast" aria-label="Live broadcast info">
+    <div class="container">
+      <h2>Watch Live Broadcasts</h2>
+      <p>All races are streamed live on YouTube. Don’t miss a lap!</p>
+      <ul>
+       <a href="https://www.youtube.com/@NERDitudes" target="_blank" class="cta-button">Watch on YouTube</a>
+
+
+      </ul>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=100093083580685" target="_blank" class="social-icon" aria-label="Facebook">
+          <img src="facebook.jpg" alt="Facebook" class="facebook-logo" />
+        </a>
+      </div>
+      <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
+      <p><a href="#">Back to Top</a></p>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu toggle
+    const hamburger = document.querySelector(".hamburger");
+    const navList = document.querySelector(".nav-list");
+
+    hamburger.addEventListener("click", () => {
+      navList.classList.toggle("nav-open");
+    });
+  </script>
+</body>
+</html>
