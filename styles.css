@@ -54,7 +54,7 @@ html {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.main-nav ul {
+.nav-list {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
@@ -62,7 +62,7 @@ html {
   flex-wrap: wrap;
 }
 
-.main-nav a {
+.nav-list a {
   text-decoration: none;
   color: #fff;
   font-weight: 700;
@@ -73,10 +73,10 @@ html {
   text-underline-offset: 4px;
 }
 
-.main-nav a:hover,
-.main-nav a:focus,
-.main-nav a:active,
-.main-nav a.active {
+.nav-list a:hover,
+.nav-list a:focus,
+.nav-list a:active,
+.nav-list a.active {
   color: red;
   border-bottom: 2px solid red;
   background: transparent;
@@ -97,6 +97,7 @@ html {
   right: 1rem;
 }
 
+/* ===== MOBILE MENU TOGGLE ===== */
 @media (max-width: 768px) {
   .nav-list {
     display: none;
@@ -117,11 +118,16 @@ html {
 
   .main-nav ul {
     flex-direction: column;
+    gap: 0.75rem;
   }
 
-  .main-nav a {
+  .nav-list a {
     font-size: 1.1rem;
     padding: 0.5rem 0;
+    display: block;
+  }
+
+  .hamburger {
     display: block;
   }
 }
@@ -340,12 +346,6 @@ p {
     font-size: 1rem;
   }
 
-  .main-nav ul {
-    gap: 1rem;
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-
   .cta-button {
     padding: 0.6rem 1.2rem;
     font-size: 0.95rem;
@@ -367,11 +367,6 @@ p {
 
   #site-title {
     font-size: 1.5rem;
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
   }
 
   .cta-button {
