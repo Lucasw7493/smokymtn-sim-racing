@@ -577,3 +577,27 @@ p {
   color: white;
 }
 
+/* Style for Round of 15 */
+.Round-of-15 {
+  background-color: #222;
+  color: #ff4d4d;
+  font-weight: bold;
+  border-left: 4px solid #ff4d4d;
+}
+
+/* Style for Round of 10 */
+.Round-of-10 {
+  background-color: #222;
+  color: #ffa500;
+  font-weight: bold;
+  border-left: 4px solid #ffa500;
+}
+
+/* Style for Championship */
+.Championship {
+  background-color: #111;
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 1.05em;
+  border-left: 4px solid #00ffcc;
+}
