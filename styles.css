@@ -602,15 +602,19 @@ p {
   border-left: 4px solid #00ffcc;
 }
 body {
-  margin: 0;
-  padding: 0;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url('ChatGPT Image Aug 4, 2025, 12_52_00 AM.png') no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('ChatGPT Image Aug 4, 2025, 12_52_00 AM.png') center/cover no-repeat;
   background-size: cover;
-  color: white;
-  font-family: 'Titillium Web', sans-serif;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-color: #0a0a0a; /* fallback color */
+  font-family: 'Orbitron', 'Titillium Web', sans-serif;
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 1.6;
 }
+
+
 .schedule-intro {
   font-size: 1.5rem;
   font-weight: 600;
@@ -628,9 +632,4 @@ body {
     font-size: 1rem;
     padding: 0.75rem 1rem;
   }
-}
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
 }
