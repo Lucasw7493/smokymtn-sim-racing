@@ -134,17 +134,48 @@ html {
 
 /* ==== HERO SECTION ==== */
 .hero {
-  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('') center/cover no-repeat;
-  height: 50vh;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('') center/cover no-repeat;
+  height: 80vh;
+  min-height: 500px;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
+.hero-banner {
+  height: 400px; /* or 500px if you want more */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.hero-text {
+  background-color: rgba(0, 0, 0, 0.38); /* adjusts how dark it is */
+  padding: 3rem 4rem; /* more padding = bigger box */
+  max-width: 800px; /* you can change width */
+  width: 100%; /* full width inside max-width */
+  border-radius: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  color: #fff;
+}
+
 
 .hero-overlay {
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0);
   padding: 2rem;
   border-radius: 10px;
 }
@@ -159,8 +190,6 @@ html {
   font-size: 1.2rem;
   color: #ffffff;
 }
-
-
 
 .hero-text-section h2 {
   font-size: 2.5rem;
@@ -191,6 +220,14 @@ html {
   background-color: #ff1a1a;
   transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+  .hero {
+    height: auto;
+    min-height: 500px;
+  }
+}
+
 
 /* ==== SECTION PADDING ==== */
 section:not(.hero-text-section) {
@@ -602,17 +639,18 @@ p {
   border-left: 4px solid #00ffcc;
 }
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('ChatGPT Image Aug 4, 2025, 12_52_00 AM.png') center/cover no-repeat;
+  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('ChatGPT Image Aug 4, 2025, 12_52_00 AM.png') center/cover no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center -250px; /* Moved background image up */
   background-color: #0a0a0a; /* fallback color */
   font-family: 'Orbitron', 'Titillium Web', sans-serif;
   color: #ffffff;
   font-size: 16px;
   line-height: 1.6;
 }
+
 
 
 .schedule-intro {

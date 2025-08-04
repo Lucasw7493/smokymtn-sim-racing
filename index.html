@@ -2,128 +2,275 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Smoky Mtn Sim Racing - A NASCAR-inspired iRacing league featuring competitive racing, live broadcasts, and a vibrant community." />
-  <title>Smoky Mtn Sim Racing | Home</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smoky Mtn Sim Racing</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
-  <meta property="og:title" content="Smoky Mtn Sim Racing" />
-  <meta property="og:description" content="Live NASCAR-style iRacing every Thursday. Cash prizes, pro broadcasts, and custom trophies!" />
-  <meta property="og:image" content="ChatGPT Image Aug 1, 2025, 04_58_54 PM.png" />
-  <meta property="og:url" content="https://lucasw7493.github.io/smokymtn-sim-racing/" />
-  <meta property="og:type" content="website" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Smoky Mtn Sim Racing" />
-  <meta name="twitter:description" content="Join the race. Watch live. Win big." />
-  <meta name="twitter:image" content="https://lucasw7493.github.io/smokymtn-sim-racing/preview.jpg" />
   <style>
-    .hero-banner {
-      background: url('ChatGPT Image Aug 1, 2025, 04_58_54 PM.png') center/cover no-repeat;
-      padding: 5rem 2rem;
-      text-align: center;
-      color: white;
-      position: relative;
+    :root {
+      --primary: #ff0000;
+      --background: #0a0a0a;
+      --card: rgba(255, 255, 255, 0.05);
+      --glass: rgba(255, 255, 255, 0.08);
+      --text: #ffffff;
+      --blur: blur(12px);
     }
-    .hero-banner {
-  background: url('smsr.png') center/cover no-repeat;
-  height: 500px; /* or however tall you want */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  position: relative;
-}
 
-    .hero-banner::before {
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', 'Titillium Web', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)), url('Screenshot_1641.png') center/cover no-repeat;
+      padding: 2rem;
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      color: var(--text);
+      text-shadow: 0 0 10px var(--primary);
+    }
+
+    nav {
+      background-color: #111;
+      box-shadow: inset 0 -2px 0 var(--primary);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+      background-color: var(--primary);
+      color: #000;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--primary);
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #111;
+        width: 100%;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    .hero {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      height: 85vh;
+      background: url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    .hero::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: var(--blur);
       z-index: 1;
     }
-    .hero-banner .container {
+
+    .hero-content {
       position: relative;
       z-index: 2;
+      background: var(--glass);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 0 15px var(--primary);
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+    }
+
+    .section {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      padding: 4rem 1rem;
+    }
+
+    .card {
+      background: var(--glass);
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+      backdrop-filter: var(--blur);
+    }
+
+    .card img {
+      max-width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+
+    .card h3 {
+      color: var(--primary);
+      margin-bottom: 0.75rem;
+    }
+
+    .card p {
+      font-size: 1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background-color: var(--primary);
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      margin-top: 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #ff4d4d;
+      box-shadow: 0 0 10px var(--primary);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: #0d0d0d;
+      text-align: center;
+      padding: 2rem;
+      border-top: 2px solid var(--primary);
+    }
+
+    footer p {
+      font-size: 0.9rem;
     }
   </style>
 </head>
 <body>
-  <header class="header" role="banner">
-    <div class="container">
-      <h1 id="site-title">Smoky Mtn Sim Racing</h1>
-      <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
-    </div>
-    <nav class="main-nav" aria-label="Main navigation">
-      <ul class="nav-list">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="standings.html">Standings</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="News.html">News</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a></li>
-      </ul>
-    </nav>
+  <header>
+    <h1>Smoky Mtn Sim Racing</h1>
   </header>
 
-  <section class="hero-banner">
-    <div class="container">
-   <h2 style="font-size: 2.5rem; margin-bottom: 1rem; color: #ffffff;">🏁 Welcome to Smoky Mtn Sim Racing</h2>
-  <p style="font-size: 1.2rem; line-height: 1.6; color: #ffffff;">
-  🏆 17-Race Season • 📺 Thursdays 9 PM ET • 🔧 Fixed Setups<br />
-  💸 Cash Prizes • 🏎️ Custom 3D Trophies • 🛡️ 6k iRating Cap
-  </p>
-
-    </div>
-  </section>
-
-  <section class="split-content" style="display: flex; flex-wrap: wrap; background-color: #111; color: white;">
-    <div style="flex: 1; min-width: 300px; padding: 2rem; background-color: #1a1a1a; display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <h2>🚗 What is SMSR?</h2>
-      <img src="theogteam.jpg" alt="About SMSR" style="width: 100%; max-width: 500px; margin: 1rem 0; border-radius: 8px;" />
-      <p>Smoky Mtn Sim Racing is a high-octane sim league inspired by NASCAR, offering structured competition with live race control and broadcasted live on youtube. </p>
-    </div>
-    <div style="flex: 1; min-width: 300px; padding: 2rem; background-color: #222; display: flex; flex-direction: column; align-items: center; text-align: center;">
-      <h2>📝 Register to Race</h2>
-      <img src="discord .gif" alt="Register" style="width: 100%; max-width: 500px; margin: 1rem 0; border-radius: 8px;" />
-      <p>Join our Discord and complete the registration form to secure your spot.</p>
-      <a href="https://discord.gg/ghdejQByGx" class="cta-button">Join Our Discord</a>
-    </div>
-  </section>
-
-  <section class="broadcast" style="padding: 3rem 2rem; text-align: center; background-color: #0d0d0d; color: white;">
-    <h2>📺 Watch Live Broadcasts</h2>
-    <p>Catch every lap live on YouTube!</p>
-    <a href="https://www.youtube.com/@NERDitudes" target="_blank" class="cta-button">Watch on YouTube</a>
-  </section>
-
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <div class="footer-social">
-        <a href="https://www.facebook.com/profile.php?id=100093083580685" target="_blank" class="social-icon" aria-label="Facebook">
-          <img src="facebook.jpg" alt="Facebook" class="facebook-logo" />
-        </a>
+  <nav>
+    <div class="nav-container">
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
-      <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
-      <p><a href="#">Back to Top</a></p>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="News.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank">Discord</a>
+      </div>
     </div>
+  </nav>
+
+  <section class="hero">
+    <div class="hero-content">
+      <h2>🏁 17-Race Season Starts Soon</h2>
+      <p>📺 Thursdays 9 PM ET • 💸 Cash Prizes • 🔧 Fixed Setups</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="card">
+      <h3>📺 Watch the Broadcast</h3>
+      <img src="channels4_banner.jpg" alt="Broadcast Preview" />
+      <p>Catch every race streamed live on YouTube with full commentary and replays.</p>
+      <a href="https://www.youtube.com/@NERDitudes" target="_blank" class="cta-button">Watch on YouTube</a>
+    </div>
+    <div class="card">
+      <h3>🚗 What is SMSR?</h3>
+      <img src="theogteam.jpg" alt="About SMSR" />
+      <p>High-octane NASCAR-style sim racing league with pro broadcasts, race control, and serious competition.</p>
+    </div>
+    <div class="card">
+      <h3>📝 Register to Race</h3>
+      <img src="discord .gif" alt="Register" />
+      <p>Join our Discord and fill out the registration form to claim your spot on the track.</p>
+      <a href="https://discord.gg/ghdejQByGx" class="cta-button">Join Discord</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
   </footer>
 
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const hamburger = document.querySelector('.hamburger');
-      const navList = document.querySelector('.nav-list');
-      if (hamburger && navList) {
-        hamburger.addEventListener('click', () => {
-          const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
-          hamburger.setAttribute('aria-expanded', String(!isExpanded));
-          navList.classList.toggle('nav-open');
-        });
-      }
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
     });
   </script>
 </body>
