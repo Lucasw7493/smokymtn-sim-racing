@@ -601,3 +601,25 @@ p {
   font-size: 1.05em;
   border-left: 4px solid #00ffcc;
 }
+body {
+  margin: 0;
+  padding: 0;
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('ChatGPT Image Aug 4, 2025, 12_52_00 AM.png') no-repeat center center fixed;
+  background-size: cover;
+  color: white;
+  font-family: 'Titillium Web', sans-serif;
+}
+.schedule-intro {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 1px 1px 2px #000000;
+  background-color: rgba(255, 0, 0, 0);
+  padding: 1rem;
+  border-left: 4px solid #ff000000;
+  border-radius: 4px;
+  margin-bottom: 2rem;
+  display: inline-block;
+}
