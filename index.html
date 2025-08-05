@@ -4,7 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Smoky Mtn Sim Racing</title>
+  <meta name="description" content="Smoky Mtn Sim Racing — competitive NASCAR-style iRacing league with live broadcasts, fixed setups, and cash prizes." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VH04WT6FG2');
+  </script>
+
   <style>
     :root {
       --primary: #ff0000;
@@ -15,11 +26,7 @@
       --blur: blur(12px);
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Orbitron', 'Titillium Web', sans-serif;
@@ -30,7 +37,9 @@
     }
 
     header {
-      background: linear-gradient(rgba(0, 0, 0, 0.411), rgba(0,0,0,0.9)), url('Dale-Earnhardt-Gun.jpg') center/cover no-repeat;
+      background:
+        linear-gradient(rgba(0, 0, 0, 0.411), rgba(0,0,0,0.9)),
+        url('Dale-Earnhardt-Gun.jpg') center/cover no-repeat;
       padding: 2rem;
       text-align: center;
       border-bottom: 2px solid var(--primary);
@@ -57,11 +66,7 @@
       padding: 1rem;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 2rem;
-    }
-
+    .nav-links { display: flex; gap: 2rem; }
     .nav-links a {
       color: var(--text);
       text-decoration: none;
@@ -70,26 +75,14 @@
       border-radius: 4px;
       transition: all 0.3s ease-in-out;
     }
-
     .nav-links a:hover {
       background-color: var(--primary);
       color: #000;
       box-shadow: 0 0 10px var(--primary);
     }
 
-    .hamburger {
-      display: none;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-    }
-
-    .hamburger span {
-      width: 25px;
-      height: 3px;
-      background: var(--primary);
-      display: block;
-    }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+    .hamburger span { width: 25px; height: 3px; background: var(--primary); display: block; }
 
     @media (max-width: 768px) {
       .nav-links {
@@ -100,14 +93,8 @@
         padding: 1rem;
         text-align: center;
       }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .hamburger {
-        display: flex;
-      }
+      .nav-links.active { display: flex; }
+      .hamburger { display: flex; }
     }
 
     .hero {
@@ -116,11 +103,10 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      height: 85vh;
+      min-height: 70vh;
       background: url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
       overflow: hidden;
     }
-
     .hero::before {
       content: '';
       position: absolute;
@@ -129,7 +115,6 @@
       backdrop-filter: var(--blur);
       z-index: 1;
     }
-
     .hero-content {
       position: relative;
       z-index: 2;
@@ -137,17 +122,15 @@
       padding: 3rem;
       border-radius: 20px;
       box-shadow: 0 0 15px var(--primary);
+      max-width: 900px;
+      width: 92%;
     }
-
     .hero h2 {
       font-size: 3rem;
       margin-bottom: 1rem;
       color: var(--primary);
     }
-
-    .hero p {
-      font-size: 1.25rem;
-    }
+    .hero p { font-size: 1.25rem; margin: 0.4rem 0; }
 
     .section {
       display: flex;
@@ -166,21 +149,13 @@
       box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
       backdrop-filter: var(--blur);
     }
-
     .card img {
       max-width: 100%;
       border-radius: 8px;
       margin-bottom: 1rem;
     }
-
-    .card h3 {
-      color: var(--primary);
-      margin-bottom: 0.75rem;
-    }
-
-    .card p {
-      font-size: 1rem;
-    }
+    .card h3 { color: var(--primary); margin-bottom: 0.75rem; }
+    .card p { font-size: 1rem; }
 
     .cta-button {
       display: inline-block;
@@ -193,7 +168,6 @@
       font-weight: bold;
       transition: all 0.3s ease;
     }
-
     .cta-button:hover {
       background-color: #ff4d4d;
       box-shadow: 0 0 10px var(--primary);
@@ -206,20 +180,16 @@
       padding: 2rem;
       border-top: 2px solid var(--primary);
     }
+    footer p { font-size: 0.9rem; }.facebook-logo {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-left: 8px;
+}
 
-    footer p {
-      font-size: 0.9rem;
-    }
   </style>
-</head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VH04WT6FG2');
-</script>
+</head>
 <body>
   <header>
     <h1>Smoky Mtn Sim Racing</h1>
@@ -227,50 +197,55 @@
 
   <nav>
     <div class="nav-container">
-      <div class="hamburger" id="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
       </div>
       <div class="nav-links" id="navLinks">
-        <a href="index.html">Home</a>
+        <!-- If your homepage file is home.html, point to it -->
+        <a href="home.html">Home</a>
         <a href="standings.html">Standings</a>
         <a href="schedule.html">Schedule</a>
-        <a href="News.html">News</a>
+        <a href="news.html">News</a>
         <a href="gallery.html">Gallery</a>
-        <a href="https://discord.gg/ghdejQByGx" target="_blank">Discord</a>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener noreferrer">Discord</a>
       </div>
     </div>
   </nav>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>🏁 17-Race Season Starts Feb 12th</h2>
-      <p>📺 Thursdays 9 PM ET • 💸 Cash Prizes • 🔧 Fixed Setups</p>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h2>🏁 17-Race Season Starts Feb 12th</h2>
+        <p>📺 Thursdays 9 PM ET • 💸 Cash Prizes • 🔧 Fixed Setups</p>
+        <p>🛡️ iRating: 1500 Min – 6000 Max • 🚗 Next Gen Cars</p>
+      </div>
+    </section>
 
-  <section class="section">
-    <div class="card">
-      <h3>📺 Watch the Broadcast</h3>
-      <img src="channels4_banner.jpg" alt="Broadcast Preview" />
-      <p>Catch every race streamed live on YouTube with full commentary and replays.</p>
-      <a href="https://www.youtube.com/@NERDitudes" target="_blank" class="cta-button">Watch on YouTube</a>
-    </div>
-    <div class="card">
-      <h3>🚗 What is SMSR?</h3>
-      <img src="theogteam.jpg" alt="About SMSR" />
-      <p>High-octane NASCAR-style sim racing league with pro broadcasts, race control, and serious competition.</p>
-    </div>
-    <div class="card">
-      <h3>📝 Register to Race</h3>
-      <img src="discord .gif" alt="Register" />
-      <p>Join our Discord and fill out the registration form to claim your spot on the track.</p>
-      <a href="https://discord.gg/ghdejQByGx" class="cta-button">Join Discord</a>
-    </div>
-  </section>
+    <section class="section">
+      <div class="card">
+        <h3>📺 Watch the Broadcast</h3>
+        <img src="channels4_banner.jpg" alt="YouTube broadcast banner preview" />
+        <p>Catch every race streamed live on YouTube with full commentary and replays.</p>
+        <a href="https://www.youtube.com/@NERDitudes" target="_blank" rel="noopener noreferrer" class="cta-button">Watch on YouTube</a>
+      </div>
 
-  <footer>
+      <div class="card">
+        <h3>🚗 What is SMSR?</h3>
+        <img src="theogteam.jpg" alt="Smoky Mtn Sim Racing drivers" />
+        <p>High-octane NASCAR-style sim racing league with pro broadcasts, race control, and serious competition.</p>
+      </div>
+
+      <div class="card">
+        <h3>📝 Register to Race</h3>
+        <!-- Note: Remove the space in the filename if possible (e.g., 'discord.gif') -->
+        <img src="discord .gif" alt="Join our Discord to register" />
+        <p>Join our Discord and fill out the registration form to claim your spot on the track.</p>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener noreferrer" class="cta-button">Join Discord</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><p>Follow us on <a href="https://facebook.com" target="_blank"><img src="facebook.jpg" class="facebook-logo" alt="Facebook"></a></p>
     <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
   </footer>
 
