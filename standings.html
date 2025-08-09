@@ -1,72 +1,94 @@
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Current driver standings for Smoky Mtn Sim Racing." />
   <title>Standings | Smoky Mtn Sim Racing</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Driver and team standings for Smoky Mtn Sim Racing." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{--primary:#ff0000;--text:#ffffff;--bg:#0a0a0a;--panel:rgba(255,255,255,.06);--panel-2:rgba(255,255,255,.08);--muted:#bdbdbd;--ring:0 0 0 2px rgba(255,0,0,.35);--shadow:0 10px 30px rgba(0,0,0,.45)}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Titillium Web',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:2px solid var(--primary);box-shadow:0 4px 24px rgba(0,0,0,.4)}.nav .wrap{max-width:1200px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-family:'Orbitron',sans-serif;font-weight:800;letter-spacing:.5px;font-size:1.1rem;display:flex;align-items:center;gap:.6rem}.brand::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--primary);box-shadow:0 0 10px var(--primary)}.nav-links{display:flex;gap:1rem;align-items:center}.nav-links a{padding:.55rem .9rem;border-radius:8px;font-weight:700;letter-spacing:.2px;transition:.2s ease;color:#f3f3f3}.nav-links a:hover,.nav-links a[aria-current="page"]{background:var(--primary);color:#000;box-shadow:var(--ring)}.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:26px;height:3px;background:var(--primary);border-radius:2px}@media (max-width:860px){.nav-links{display:none;position:absolute;left:0;right:0;top:100%;background:#0f0f0f;border-bottom:1px solid rgba(255,255,255,.08);flex-direction:column;padding:1rem}.nav-links.show{display:flex}.hamburger{display:flex}}
+    header.site-header{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.85) 60%),url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;border-bottom:1px solid rgba(255,255,255,.08)}
+    .hero{max-width:1200px;margin:0 auto;padding:3.5rem 1rem 2.2rem;display:grid;grid-template-columns:1fr;gap:1.2rem}
+    .hero-card{background:var(--panel-2);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow)}
+    .hero-card h1{font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,3.2vw,2.4rem)}
+    .keyline{height:2px;width:64px;background:var(--primary);margin:1rem 0}
+    .section{max-width:1200px;margin:1rem auto 2.5rem;padding:1rem}
+    .table-wrap{overflow-x:auto}
+    table.standings{width:100%;border-collapse:collapse;background:#101010;border:1px solid #2a2a2a}
+    .standings thead th{background:var(--primary);color:#000;text-align:left;padding:12px;border:1px solid #2a2a2a}
+    .standings tbody td{padding:12px;border:1px solid #2a2a2a}
+    .standings tbody tr:nth-child(even){background:rgba(255,255,255,.04)}
+    footer{border-top:2px solid var(--primary);background:#0d0d0d;margin-top:2.5rem}
+    .footer-wrap{max-width:1200px;margin:0 auto;padding:1.2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  </style>
 </head>
-</head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VH04WT6FG2');
-</script>
 <body>
-  <header class="header" role="banner">
-    <div class="container">
-      <h1 id="site-title">Smoky Mtn Sim Racing</h1>
-      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="standings.html" class="active">Standings</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="News.html">News</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a></li>
-        </ul>
-      </nav>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">SMOKY MTN SIM RACING</a>
+      <div class="hamburger" id="hamburger-std" aria-label="Toggle menu" aria-controls="primary-nav-std" aria-expanded="false"><span></span><span></span><span></span></div>
+      <div class="nav-links" id="primary-nav-std" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="standings.html" aria-current="page">Standings</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a>
+      </div>
     </div>
+  </nav>
+
+  <header class="site-header">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Season Standings</h1>
+        <div class="keyline"></div>
+        <p class="subtitle">Updated weekly after Thursday races. Official once steward reviews are complete.</p>
+      </div>
+    </section>
   </header>
 
-  <main>
-    <section class="container" style="text-align: center; padding: 3rem 1rem;">
-      <h2>Driver Standings</h2>
-      <p>Below you'll find the latest standings for the season. These will be updated weekly after each race.</p>
-
-      <!-- You can use this image or replace with an embedded table later -->
-      <!-- Example embedded image -->
-      <img src="a1e6fd63-bbc2-4e90-afc4-fe84304064c2.png" alt="Current Driver Standings" class="standings-image" />
-
-
-      <!-- Or link to external standings -->
-      <!-- <p><a href="https://example.com/standings-sheet" target="_blank" class="cta-button">View Live Standings</a></p> -->
-    </section>
+  <main class="section">
+    <div class="table-wrap">
+      <table class="standings" aria-describedby="standings-note">
+        <thead>
+          <tr>
+            <th scope="col">Pos</th>
+            <th scope="col">Driver</th>
+            <th scope="col">Team</th>
+            <th scope="col">Points</th>
+            <th scope="col">Wins</th>
+            <th scope="col">Top 5s</th>
+            <th scope="col">Top 10s</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Driver Name</td><td>Team Name</td><td>000</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>2</td><td>Driver Name</td><td>Team Name</td><td>000</td><td>0</td><td>0</td><td>0</td></tr>
+          <tr><td>3</td><td>Driver Name</td><td>Team Name</td><td>000</td><td>0</td><td>0</td><td>0</td></tr>
+        </tbody>
+      </table>
+      <p id="standings-note" style="color:#bdbdbd;margin-top:.8rem;font-size:.95rem">Note: Points reflect penalties/bonuses per rulebook.</p>
+    </div>
   </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
-      <p><a href="#">Back to Top</a></p>
+  <footer>
+    <div class="footer-wrap">
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="facebook.jpg" alt="Facebook" style="width:22px;height:22px;object-fit:contain;" />
+          <span>Follow on Facebook</span>
+        </a>
+      </div>
+      <div class="copyright">&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Mobile nav toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navList = document.querySelector(".nav-list");
-
-    hamburger.addEventListener("click", () => {
-      navList.classList.toggle("nav-open");
-    });
+    const hbStd=document.getElementById('hamburger-std');
+    const navStd=document.getElementById('primary-nav-std');
+    if(hbStd&&navStd){hbStd.addEventListener('click',()=>{const s=navStd.classList.toggle('show');hbStd.setAttribute('aria-expanded',s?'true':'false');});}
   </script>
 </body>
 </html>

@@ -1,301 +1,81 @@
-/* RESET + BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  background-color: var(--bg);
+  color: var(--text);
   font-family: 'Orbitron', 'Titillium Web', sans-serif;
-  background-color: #0a0a0a;
-  color: #ffffff;
   font-size: 16px;
   line-height: 1.6;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-html {
-  scroll-padding-top: 100px;
-}
-
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ==== HEADER ==== */
 .header {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
-  border-bottom: 3px solid rgb(255, 0, 0);
+  background-color: rgba(0,0,0,0.85);
+  border-bottom: 3px solid var(--primary);
   padding: 1rem 0;
   position: sticky;
   top: 0;
   z-index: 1000;
   text-align: center;
-  filter: brightness(1.2);
+  filter: brightness(1.05);
 }
 
-#site-title {
-  font-size: 2rem;
-  font-weight: 800;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-/* ==== NAVIGATION ==== */
-.main-nav {
-  margin-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: rgba(0, 0, 0, 0);
-}
-
-.nav-list {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  list-style: none;
-  flex-wrap: wrap;
-}
-
-.nav-list a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: 700;
-  font-size: 1rem;
-  padding: 0.3rem 0.5rem;
-  border-bottom: 2px solid transparent;
-  transition: color 0.3s ease, border-bottom 0.3s ease;
-  text-underline-offset: 4px;
-}
-
-.nav-list a:hover,
-.nav-list a:focus,
-.nav-list a:active,
-.nav-list a.active {
-  color: red;
-  border-bottom: 2px solid red;
-  background: transparent;
-  text-decoration: none;
-}
-
-/* ==== HAMBURGER MENU ==== */
-.hamburger {
-  display: none;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: red;
-  cursor: pointer;
-  z-index: 1100;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-/* ===== MOBILE MENU TOGGLE ===== */
-@media (max-width: 768px) {
-  .nav-list {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 1rem;
-    background-color: rgba(0, 0, 0, 0.95);
-    padding: 1.5rem;
-    border-top: 2px solid red;
-    border-bottom: 2px solid red;
-    width: 100%;
-  }
-
-  .nav-list.nav-open {
-    display: flex;
-  }
-
-  .main-nav ul {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
-
-  .nav-list a {
-    font-size: 1.1rem;
-    padding: 0.5rem 0;
-    display: block;
-  }
-
-  .hamburger {
-    display: block;
-  }
-}
-
-/* ==== HERO SECTION ==== */
-.hero {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('') center/cover no-repeat;
-  height: 80vh;
-  min-height: 500px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-banner {
-  height: 400px; /* or 500px if you want more */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
-
-.hero-text {
-  background-color: rgba(0, 0, 0, 0.38); /* adjusts how dark it is */
-  padding: 3rem 4rem; /* more padding = bigger box */
-  max-width: 800px; /* you can change width */
-  width: 100%; /* full width inside max-width */
-  border-radius: 10px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.hero-text h2 {
-  font-size: 2.5rem;
-  color: red;
-  margin-bottom: 1rem;
-}
-
-.hero-text p {
-  font-size: 1.2rem;
-  color: #fff;
-}
-
-
-.hero-overlay {
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0);
-  padding: 2rem;
-  border-radius: 10px;
-}
-
-.hero-overlay h2 {
-  font-size: 2.5rem;
-  color: red;
-  margin-bottom: 1rem;
-}
-
-.hero-overlay p {
-  font-size: 1.2rem;
-  color: #ffffff;
-}
-
-.hero-text-section h2 {
-  font-size: 2.5rem;
-  color: red;
-  margin-bottom: 1rem;
-}
-
-.hero-text-section p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
-.cta-button {
-  background-color: red;
-  color: #000;
-  font-weight: 700;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
-  text-decoration: none;
-  display: inline-block;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.cta-button:hover {
-  background-color: #ff1a1a;
-  transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: auto;
-    min-height: 500px;
-  }
-}
-
-
-/* ==== SECTION PADDING ==== */
-section:not(.hero-text-section) {
-  padding: 3rem 1rem;
-}
-
-h2 {
-  font-size: 2rem;
-  color: red;
-  margin-bottom: 1rem;
-}
-
-p {
-  margin-bottom: 1rem;
-}
-
-/* ==== BROADCAST SECTION ==== */
 .broadcast {
-  background: linear-gradient(rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.85)), url('channels4_banner.jpg') center/cover no-repeat;
+  background-color: rgba(0,0,0,0.85);
   color: #fff;
-  border-top: #ff1a1a solid 2px;
+  border-top: 2px solid #ff1a1a;
 }
 
-.broadcast h2,
-.broadcast p,
-.broadcast a {
-  text-shadow: 1px 1px 2px #000;
-}
-
-.broadcast a {
-  color: #fff;
-  text-decoration: underline;
-}
-
-.broadcast a:hover {
-  color: red;
-}
-
-/* ==== FOOTER ==== */
 .footer {
-  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('smsr nav banner.png') center/cover no-repeat;
+  background-color: rgba(0,0,0,0.8);
   color: #fff;
   padding: 2rem 1rem;
   text-align: center;
-  border-top: 2px solid red;
-  filter: brightness(1.4);
+  border-top: 2px solid var(--primary);
+  filter: brightness(1.2);
 }
 
-.footer a {
-  color: red;
-  text-decoration: none;
+.registration::before {
+  content: none;
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.table-wrap { overflow-x: auto; margin-top: 0; }
+.schedule-table {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border-collapse: collapse;
+  color: #fff;
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+}
+.schedule-table thead th {
+  background-color: var(--primary);
+  color: #000;
+  padding: 12px;
+  border: 1px solid #333;
+  text-align: left;
+}
+.schedule-table tbody td {
+  padding: 12px;
+  border: 1px solid #333;
+}
+.schedule-table tbody tr:nth-child(even) {
+  background-color: rgba(255,255,255,0.04);
 }
 
-/* CONTINUED IN NEXT COMMENT → */
-/* ==== GALLERY ==== */
-.gallery-week {
-  margin-bottom: 3rem;
+.standings-image,
+.responsive-schedule-image {
+  width: 90%;
+  max-width: 500px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.45);
 }
+.responsive-schedule-image { max-width: 350px; }
 
-.gallery-week h3 {
-  color: red;
-  text-align: center;
-  margin-bottom: 1rem;
-}
+.gallery-week { margin-bottom: 3rem; }
+.gallery-week h3 { color: var(--primary); text-align: center; margin-bottom: 1rem; }
 
 .gallery-grid {
   display: grid;
@@ -303,371 +83,67 @@ p {
   gap: 1rem;
   justify-items: center;
 }
-
 .gallery-grid img {
   width: 100%;
   max-width: 300px;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.3s ease;
-  border: 2px solid red;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+  transition: transform 0.25s ease;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.45);
 }
-
-.gallery-grid img:hover {
-  transform: scale(1.05);
-}
+.gallery-grid img:hover { transform: scale(1.05); }
 
 .lightbox {
   display: none;
   position: fixed;
   z-index: 2000;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
   background-color: rgba(0, 0, 0, 0.9);
   justify-content: center;
   align-items: center;
 }
-
 .lightbox-img {
   max-width: 90%;
   max-height: 80vh;
-  border: 4px solid red;
+  border: 4px solid var(--primary);
   border-radius: 10px;
 }
-
 .lightbox .close {
   position: absolute;
   top: 2rem;
   right: 2rem;
   font-size: 2rem;
-  color: white;
+  color: #fff;
   cursor: pointer;
+}/* --- schedule/home shared bits --- */
+.hero-card{
+  background: var(--panel-2);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 18px;
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
 }
+.hero-title{ font-family:'Orbitron',sans-serif; font-size: clamp(1.8rem,3.2vw,2.4rem); }
+.subtitle{ color:#e8e8e8; font-size:1.05rem; }
+.keyline{ height:2px; width:64px; background:var(--primary); margin:1rem 0; }
 
-/* ==== RESPONSIVE ==== */
-@media (max-width: 992px) {
-  .hero-overlay h2 {
-    font-size: 2rem;
-  }
-
-  .hero-overlay p {
-    font-size: 1rem;
-  }
-
-  .cta-button {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .hero {
-    height: 40vh;
-  }
-
-  .hero-overlay h2 {
-    font-size: 1.8rem;
-  }
-
-  .hero-overlay p {
-    font-size: 0.95rem;
-  }
-
-  #site-title {
-    font-size: 1.5rem;
-  }
-
-  .cta-button {
-    width: 100%;
-    max-width: 300px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 35vh;
-  }
-
-  .hero-overlay h2 {
-    font-size: 1.5rem;
-  }
-
-  .hero-overlay p {
-    font-size: 0.85rem;
-  }
-
-  .cta-button {
-    font-size: 0.9rem;
-    padding: 0.6rem 1rem;
-  }
-
-  #site-title {
-    font-size: 1.3rem;
-  }
-
-  .container {
-    width: 95%;
-  }
-}
-
-/* ==== ICONS ==== */
-.discord-logo {
-  max-width: 100px;
-  display: block;
-  margin: 1rem auto;
-  filter: drop-shadow(0 0 10px red);
-}
-
-/* ==== DRIVER REGISTRATION ==== */
-.registration {
-  position: relative;
-  padding: 80px 0;
+/* highlight strip */
+.strip{ margin:1.6rem 0; background:#0f0f0f; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); }
+.strip .wrap{ max-width:1200px; margin:0 auto; padding:1rem; display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem; }
+.pill{
+  background: var(--panel-1);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 999px;
+  padding: .65rem .9rem;
   text-align: center;
-  color: #fff;
-  overflow: hidden;
-  z-index: 1;
-  border-top: #ff1a1a solid 2px;
+  font-weight: 700;
 }
+@media (max-width:900px){ .strip .wrap{ grid-template-columns: repeat(2,1fr); } }
 
-.registration::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url("discord .gif") center center / cover no-repeat;
-  z-index: -1;
-  opacity: 0.5;
-  pointer-events: none;
-}
-
-.registration h2 {
-  font-size: 2.5rem;
-  color: red;
-  margin-bottom: 1rem;
-  font-family: 'Orbitron', sans-serif;
-}
-
-.registration p {
-  font-size: 1.1rem;
-  color: #fff;
-  margin-bottom: 1.5rem;
-}
-
-.icon-row {
-  margin-top: 2rem;
-  font-size: 1.8rem;
-  color: red;
-}
-
-/* ==== SOCIAL ICON ==== */
-.facebook-logo {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  filter: drop-shadow(0 0 5px red);
-  transition: transform 0.2s ease;
-}
-
-.facebook-logo:hover {
-  transform: scale(1.1);
-}
-
-/* ==== RESPONSIVE NAV MENU ==== */
-.menu-toggle {
-  display: block;
-  font-size: 2rem;
-  background: none;
-  border: none;
-  color: red;
-  cursor: pointer;
-  z-index: 1100;
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-}
-
-#navbarMenu {
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  background-color: #000;
-  padding: 1rem 0;
-  width: 100%;
-  gap: 1rem;
-}
-
-#navbarMenu.open {
-  display: flex;
-}
-
-@media (min-width: 768px) {
-  .menu-toggle {
-    display: none;
-  }
-
-  #navbarMenu {
-    display: flex !important;
-    flex-direction: row;
-    justify-content: center;
-    background: none;
-    gap: 1.5rem;
-    padding: 0.5rem 0;
-  }
-
-  #navbarMenu ul {
-    display: flex;
-    gap: 1.5rem;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-  }
-
-  #navbarMenu li {
-    margin: 0;
-  }
-
-  #navbarMenu a {
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-  }
-
-  #navbarMenu a:hover {
-    color: red;
-  }
-}
-
-/* ==== STANDINGS AND SCHEDULE IMAGES ==== */
-.standings-image {
-  max-width: 500px;
-  width: 90%;
-  height: 100%;
-  margin: 0 auto;
-  display: block;
-  border: 2px solid red;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-.responsive-schedule-image {
-  width: 90%;
-  max-width: 350px;
-  height: auto;
-  border: 2px solid red;
-  border-radius: 8px;
-  display: block;
-  margin: 0 auto;
-  box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
-}
-
-/* ==== NEWS ARTICLES ==== */
-.news-article {
-  position: relative;
-  overflow: hidden;
-  border-left: 4px solid red;
-  background-color: rgba(0, 0, 0, 0.7);
-  margin-bottom: 2rem;
-  padding: 2rem;
-}
-
-.news-bg-container {
-  position: relative;
-  z-index: 0;
-}
-
-.news-thumb-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 1%;
-  max-width: none;
-  height: 120%;
-  object-fit: cover;
-  opacity: 0.15;
-  filter: brightness(1.3) blur(1px);
-  z-index: -1;
-}
-
-.news-text-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-}
-
-.news-text-content h3 {
-  color: red;
-  margin-bottom: 0.5rem;
-}
-
-.news-text-content time {
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-.news-text-content p {
-  margin-top: 0.75rem;
-  color: white;
-}
-
-/* Style for Round of 15 */
-.Round-of-15 {
-  background-color: #222;
-  color: #ff4d4d;
-  font-weight: bold;
-  border-left: 4px solid #ff4d4d;
-}
-
-/* Style for Round of 10 */
-.Round-of-10 {
-  background-color: #222;
-  color: #ffa500;
-  font-weight: bold;
-  border-left: 4px solid #ffa500;
-}
-
-/* Style for Championship */
-.Championship {
-  background-color: #111;
-  color: #00ffcc;
-  font-weight: bold;
-  font-size: 1.05em;
-  border-left: 4px solid #00ffcc;
-}
-body {
-  background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url('ChatGPT Image Aug 4, 2025, 12_52_00 AM.png') center/cover no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-position: center -250px; /* Moved background image up */
-  background-color: #0a0a0a; /* fallback color */
-  font-family: 'Orbitron', 'Titillium Web', sans-serif;
-  color: #ffffff;
-  font-size: 16px;
-  line-height: 1.6;
-}
-
-
-
-.schedule-intro {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #ffffff;
-  text-shadow: 1px 1px 2px #000000;
-  background-color: rgba(255, 0, 0, 0);
-  padding: 1rem;
-  border-left: 4px solid #ff000000;
-  border-radius: 4px;
-  margin-bottom: 2rem;
-  display: inline-block;
-}
-@media (max-width: 600px) {
-  .schedule-intro {
-    font-size: 1rem;
-    padding: 0.75rem 1rem;
-  }
-}
+/* force nav/link colors like home (no purple visited) */
+a { color: inherit; text-decoration: none; }
+.nav-list a { color:#fff; }
+.nav-list a:hover,
+.nav-list a:focus-visible,
+.nav-list a.active { color: var(--primary); border-bottom: 2px solid var(--primary); }

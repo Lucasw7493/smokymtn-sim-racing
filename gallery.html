@@ -1,110 +1,109 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Race photo gallery for Smoky Mtn Sim Racing." />
   <title>Gallery | Smoky Mtn Sim Racing</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta name="description" content="Race photos and highlights from Smoky Mtn Sim Racing." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    :root{--primary:#ff0000;--text:#ffffff;--bg:#0a0a0a;--panel:rgba(255,255,255,.06);--panel-2:rgba(255,255,255,.08);--muted:#bdbdbd;--ring:0 0 0 2px rgba(255,0,0,.35);--shadow:0 10px 30px rgba(0,0,0,.45)}*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{font-family:'Titillium Web',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;overflow-x:hidden}a{color:inherit;text-decoration:none}img{max-width:100%;display:block}.nav{position:sticky;top:0;z-index:50;background:rgba(0,0,0,.85);backdrop-filter:saturate(140%) blur(8px);border-bottom:2px solid var(--primary);box-shadow:0 4px 24px rgba(0,0,0,.4)}.nav .wrap{max-width:1200px;margin:0 auto;padding:.75rem 1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}.brand{font-family:'Orbitron',sans-serif;font-weight:800;letter-spacing:.5px;font-size:1.1rem;display:flex;align-items:center;gap:.6rem}.brand::before{content:"";width:10px;height:10px;border-radius:2px;background:var(--primary);box-shadow:0 0 10px var(--primary)}.nav-links{display:flex;gap:1rem;align-items:center}.nav-links a{padding:.55rem .9rem;border-radius:8px;font-weight:700;letter-spacing:.2px;transition:.2s ease;color:#f3f3f3}.nav-links a:hover,.nav-links a[aria-current="page"]{background:var(--primary);color:#000;box-shadow:var(--ring)}.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}.hamburger span{width:26px;height:3px;background:var(--primary);border-radius:2px}@media (max-width:860px){.nav-links{display:none;position:absolute;left:0;right:0;top:100%;background:#0f0f0f;border-bottom:1px solid rgba(255,255,255,.08);flex-direction:column;padding:1rem}.nav-links.show{display:flex}.hamburger{display:flex}}
+    header.site-header{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.85) 60%),url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;border-bottom:1px solid rgba(255,255,255,.08)}
+    .hero{max-width:1200px;margin:0 auto;padding:3.5rem 1rem 2.2rem;display:grid;grid-template-columns:1fr;gap:1.2rem}
+    .hero-card{background:var(--panel-2);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:1.6rem;box-shadow:var(--shadow)}
+    .hero-card h1{font-family:'Orbitron',sans-serif;font-size:clamp(1.8rem,3.2vw,2.4rem)}
+    .keyline{height:2px;width:64px;background:var(--primary);margin:1rem 0}
+    .section{max-width:1200px;margin:1rem auto 2.5rem;padding:1rem}
+    .gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+    .gallery-grid img{width:100%;aspect-ratio:16/9;object-fit:cover;border:2px solid var(--primary);border-radius:10px;transition:transform .2s ease, box-shadow .2s ease;box-shadow:0 0 10px rgba(255,0,0,.4)}
+    .gallery-grid img:hover{transform:scale(1.03);box-shadow:0 0 14px rgba(255,0,0,.55)}
+    .lightbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:2000;align-items:center;justify-content:center}
+    .lightbox.open{display:flex}
+    .lightbox-img{max-width:90%;max-height:80vh;border:4px solid var(--primary);border-radius:10px}
+    .lightbox .close{position:absolute;top:2rem;right:2rem;font-size:2rem;color:#fff;cursor:pointer}
+    footer{border-top:2px solid var(--primary);background:#0d0d0d;margin-top:2.5rem}
+    .footer-wrap{max-width:1200px;margin:0 auto;padding:1.2rem;display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+  </style>
 </head>
-</head><!-- Google tag (gtag.js) -->
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VH04WT6FG2');
-</script>
 <body>
-  <header class="header" role="banner">
-    <div class="container">
-      <h1 id="site-title">Smoky Mtn Sim Racing</h1>
-      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="standings.html">Standings</a></li>
-          <li><a href="schedule.html">Schedule</a></li>
-          <li><a href="News.html">News</a></li>
-          <li><a href="gallery.html" class="active">Gallery</a></li>
-          <li><a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="container" style="padding: 3rem 1rem;">
-      <h2 style="text-align: center;">Race Photo Gallery</h2>
-      <p style="text-align: center;">Images from each week's event. Click to view larger.</p>
-
-      <!-- Week 1 -->
-      <div class="gallery-week">
-        <h3>Week 1 – Daytona</h3>
-        <div class="gallery-grid">
-          <img src="daytona.jpg" alt="Race Image 1" />
-          <img src="iRacing.com Simulator 2_14_2025 6_00_08 AM.png" alt="Race Image 2" />
-          <img src="Screenshot_142.png" alt="Race Image 3" />
-        </div>
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">SMOKY MTN SIM RACING</a>
+      <div class="hamburger" id="hamburger-gal" aria-label="Toggle menu" aria-controls="primary-nav-gal" aria-expanded="false"><span></span><span></span><span></span></div>
+      <div class="nav-links" id="primary-nav-gal" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html" aria-current="page">Gallery</a>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a>
       </div>
+    </div>
+  </nav>
 
-      <!-- Week 2 -->
-      <div class="gallery-week">
-        <h3>Week 2 – Las Vegas</h3>
-        <div class="gallery-grid">
-          <img src="full-length-las-vegas-race-with-ai-v0-bea9alhz6doe1.webp" alt="Race Image 1" />
-          <img src="02.jpg" alt="Race Image 2" />
-        </div>
+  <header class="site-header">
+    <section class="hero">
+      <div class="hero-card">
+        <h1>Gallery</h1>
+        <div class="keyline"></div>
+        <p class="subtitle">Race night photos, winners, and best moments of the season.</p>
       </div>
     </section>
+  </header>
+
+  <main class="section">
+    <div class="gallery-grid" id="gallery">
+      <!-- Replace with your images -->
+      <img src="iRacing.com Simulator 2_14_2025 6_00_08 AM.png" alt="Race action 1" />
+      <img src="Screenshot_142.png" alt="Race action 2" />
+      <img src="daytona.jpg" alt="Race action 3" />
+      <img src="iRacing.com_Simulator_8_1_2024_11_11_29_PM.jpg" alt="Race action 4" />
+      <img src="Screenshot_1641.png" alt="Race action 5" />
+      <img src="theogteam.jpg" alt="Race action 6" />
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer">
+      <span class="close" id="lightboxClose" aria-label="Close">&times;</span>
+      <img class="lightbox-img" id="lightboxImg" alt="Expanded gallery image" />
+    </div>
   </main>
 
-  <div id="lightbox" class="lightbox">
-    <span class="close">&times;</span>
-    <img class="lightbox-img" src="" alt="Enlarged Image" />
-  </div>
-
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
-      <p><a href="#">Back to Top</a></p>
+  <footer>
+    <div class="footer-wrap">
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="facebook.jpg" alt="Facebook" style="width:22px;height:22px;object-fit:contain;" />
+          <span>Follow on Facebook</span>
+        </a>
+      </div>
+      <div class="copyright">&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    const hamburger = document.querySelector(".hamburger");
-    const navList = document.querySelector(".nav-list");
-    hamburger.addEventListener("click", () => {
-      navList.classList.toggle("nav-open");
-    });
+    const hbGal=document.getElementById('hamburger-gal');
+    const navGal=document.getElementById('primary-nav-gal');
+    if(hbGal&&navGal){hbGal.addEventListener('click',()=>{const s=navGal.classList.toggle('show');hbGal.setAttribute('aria-expanded',s?'true':'false');});}
 
-    const lightbox = document.getElementById("lightbox");
-    const lightboxImg = document.querySelector(".lightbox-img");
-    const closeBtn = document.querySelector(".lightbox .close");
+    // Lightbox logic
+    const gallery=document.getElementById('gallery');
+    const lightbox=document.getElementById('lightbox');
+    const lightboxImg=document.getElementById('lightboxImg');
+    const lightboxClose=document.getElementById('lightboxClose');
 
-    document.querySelectorAll(".gallery-grid img").forEach(img => {
-      img.addEventListener("click", () => {
-        lightbox.style.display = "flex";
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
+    if(gallery && lightbox){
+      gallery.addEventListener('click', (e)=>{
+        const target=e.target;
+        if(target.tagName==='IMG'){
+          lightboxImg.src=target.src;
+          lightbox.classList.add('open');
+        }
       });
-    });
-
-    closeBtn.addEventListener("click", () => {
-      lightbox.style.display = "none";
-      lightboxImg.src = "";
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.style.display = "none";
-        lightboxImg.src = "";
-      }
-    });
+      lightboxClose.addEventListener('click', ()=> lightbox.classList.remove('open'));
+      lightbox.addEventListener('click', (e)=>{ if(e.target===lightbox) lightbox.classList.remove('open'); });
+      document.addEventListener('keydown', (e)=>{ if(e.key==='Escape') lightbox.classList.remove('open'); });
+    }
   </script>
 </body>
 </html>

@@ -1,143 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>League News | Smoky Mtn Sim Racing</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>News | Smoky Mtn Sim Racing</title>
+  <meta name="description" content="League news and announcements for Smoky Mtn Sim Racing." />
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+
+  <meta name="theme-color" content="#ff0000" />
 
   <style>
-    .news-hero {
-      height: 50vh;
-      background: url('Screenshot_1641.png') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-      color: white;
-      text-align: center;
+    :root{
+      --primary:#ff0000;
+      --text:#ffffff;
+      --bg:#0a0a0a;
+      --panel:rgba(255,255,255,.06);
+      --panel-2:rgba(255,255,255,.08);
+      --muted:#bdbdbd;
+      --ring:0 0 0 2px rgba(255,0,0,.35);
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:'Titillium Web',sans-serif;
+      background:var(--bg);color:var(--text);line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* NAV */
+    .nav{
+      position:sticky;top:0;z-index:50;
+      background:rgba(0,0,0,.85);
+      border-bottom:2px solid var(--primary);
+      box-shadow:0 4px 24px rgba(0,0,0,.4);
+    }
+    .nav .wrap{
+      max-width:1200px;margin:0 auto;padding:.75rem 1rem;
+      display:flex;align-items:center;justify-content:space-between;
+    }
+    .brand{
+      font-family:'Orbitron',sans-serif;
+      font-weight:800;font-size:1.1rem;display:flex;align-items:center;gap:.6rem;
+    }
+    .brand::before{
+      content:"";width:10px;height:10px;border-radius:2px;background:var(--primary);
+      box-shadow:0 0 10px var(--primary);
+    }
+    .nav-links{display:flex;gap:1rem;align-items:center}
+    .nav-links a{
+      padding:.55rem .9rem;border-radius:8px;font-weight:700;letter-spacing:.2px;
+      transition:.2s ease;color:#f3f3f3;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"]{
+      background:var(--primary);color:#000;box-shadow:var(--ring);
     }
 
-    .news-hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 1;
+    /* HEADER */
+    header.site-header{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.88) 60%),
+        url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
+    }
+    .hero{max-width:1200px;margin:0 auto;padding:4rem 1rem 2rem;}
+    .hero-card{
+      background:var(--panel-2);border:1px solid rgba(255,255,255,.08);
+      border-radius:18px;padding:2rem;box-shadow:var(--shadow);
+    }
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:.5rem;font-weight:700;
+      background:rgba(255,0,0,.12);border:1px solid rgba(255,0,0,.35);
+      border-radius:999px;padding:.35rem .75rem;margin-bottom:1rem;
+    }
+    .hero h1{
+      font-family:'Orbitron',sans-serif;
+      font-size:clamp(2rem,3.6vw,3rem);
+      margin-bottom:.7rem;text-shadow:0 0 10px rgba(255,0,0,.2);
+    }
+    .subtitle{color:#e8e8e8;font-size:1.05rem}
+    .keyline{height:2px;width:64px;background:var(--primary);margin:1.2rem 0}
+
+    /* STRIP */
+    .strip{margin:2rem 0;background:#0f0f0f;border-top:1px solid rgba(255,255,255,.08);border-bottom:1px solid rgba(255,255,255,.08)}
+    .strip .wrap{
+      max-width:1200px;margin:0 auto;padding:1rem;
+      display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;
+    }
+    .pill{
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.1);
+      border-radius:999px;padding:.65rem .9rem;text-align:center;font-weight:700;
     }
 
-    .news-hero h1 {
-      z-index: 2;
-      font-size: 3rem;
-      color: red;
+    /* GRID */
+    .section{max-width:1200px;margin:0 auto;padding:0 1rem 2.5rem}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+    .card{
+      background:var(--panel);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;overflow:hidden;
+      display:flex;flex-direction:column;box-shadow:var(--shadow);
+    }
+    .card img{aspect-ratio:16/9;object-fit:cover}
+    .body{padding:1.1rem}
+    .meta{color:#bdbdbd;font-size:.92rem;margin-bottom:.35rem}
+    h3{font-family:'Orbitron',sans-serif;color:var(--primary);margin:.25rem 0 .4rem}
+    p{color:#e6e6e6}
+    .actions{padding:0 1.1rem 1.1rem}
+    .btn-primary{
+      display:inline-flex;align-items:center;gap:.6rem;font-weight:800;letter-spacing:.3px;
+      padding:.75rem 1rem;border-radius:12px;
+      background:var(--primary);color:#000;border:0;box-shadow:var(--ring);
     }
 
-    .news-section {
-      padding: 3rem 1rem;
-    }
-
-    .news-article {
-      background: rgba(0,0,0,0.7);
-      margin-bottom: 2rem;
-      padding: 1.5rem;
-      border-left: 4px solid red;
-    }
-
-    .news-article h3 {
-      color: red;
-      margin-bottom: 0.5rem;
-    }
-
-    .news-article time {
-      font-size: 0.9rem;
-      color: #ccc;
-    }
-
-    .news-article p {
-      margin-top: 0.75rem;
-      color: white;
-    }
+    /* FOOTER */
+    footer{border-top:2px solid var(--primary);background:#0d0d0d;margin-top:2.5rem}
+    .footer-wrap{max-width:1200px;margin:0 auto;padding:1.2rem;display:flex;justify-content:space-between;flex-wrap:wrap}
+    .social a{display:inline-flex;align-items:center;gap:.5rem;padding:.5rem .7rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:999px}
+    .copyright{color:#d5d5d5;font-size:.95rem}
   </style>
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VH04WT6FG2');
-</script>
 <body>
-  <header class="header">
-    <h1 id="site-title">Smoky Mtn Sim Racing</h1>
+  <!-- NAV -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">SMOKY MTN SIM RACING</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html">Schedule</a>
+        <a href="news.html" aria-current="page">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a>
+      </div>
+    </div>
+  </nav>
 
-    <!-- Hamburger Menu Button -->
-    <button class="menu-toggle" id="menuToggle">&#9776;</button>
-
-    <!-- Navigation -->
-    <nav class="main-nav" id="navbarMenu">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="standings.html">Standings</a></li>
-        <li><a href="schedule.html">Schedule</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="https://discord.gg/ghdejQByGx">Discord</a></li>
-        <li><a class="active" href="News.html">News</a></li>
-      </ul>
-    </nav>
+  <!-- HERO -->
+  <header class="site-header">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">📰 League Announcement</span>
+        <h1>Big News for 2026 Season</h1>
+        <div class="keyline"></div>
+        <p class="subtitle">Smoky Mtn Sim Racing Will Have Custom Trophies And Cash Prizes</p>
+      </div>
+    </section>
   </header>
 
-  <section class="news-hero">
-    <h1>League News & Updates</h1>
-  </section>
-
-  <section class="news-section container">
-     
-    <article class="news-article">
-  <div class="news-bg-container">
-    <img src="advertisment 33.png" alt="Daytona Race" class="news-thumb-bg" />
-    <div class="news-text-content">
-      <h3>New Season Begins February 12th!</h3>
-      <time datetime="2025-08-01">August 1, 2025</time>
-      <p>We’re excited to kick off our new 17-race season at Daytona. Registration is open and filling fast. Don’t miss your shot at the cash prizes!</p>
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="pill">📺 Pro Broadcast</div>
+      <div class="pill">💵 Cash Prizes</div>
+      <div class="pill">🏆 Custom 3D Trophies</div>
+      <div class="pill">🕘 Thursdays 9 PM ET</div>
     </div>
   </div>
-</article>
 
-
-    <article class="news-article">
-      <h3>Partnership with Nerditudes Announced</h3>
-      <time datetime="2025-07-20">July 20, 2025</time>
-      <p>We're thrilled to announce our races will be broadcast live by Nerditudes. Expect pro-level commentary and stunning coverage for every race night.</p>
+  <!-- NEWS GRID -->
+ <main class="section">
+  <div class="grid">
+    <article class="card">
+      <img src="ChatGPT Image Aug 4, 2025, 12_52_00 AM.png" alt="Cash prize and trophy announcement" />
+      <div class="body">
+        <div class="meta"><time datetime="2026-01-28">Jan 28, 2026</time> • Announcement</div>
+        <h3>Cash Prizes, Custom Trophies & Live Coverage</h3>
+        <p>Smoky Mtn Sim Racing is proud to announce a partnership with <strong>NERDitudes</strong>, 
+        who will be bringing you live, professional broadcasts of every Thursday night race. 
+        This season also features a $500 prize pool for the top three drivers and exclusive 
+        custom 3D-printed trophies for select events and the championship.</p>
+      </div>
     </article>
+  </div>
+</main>
 
-    <article class="news-article">
-      <h3>Custom Trophy Designs Revealed</h3>
-      <time datetime="2025-07-10">July 10, 2025</time>
-      <p>Winners will now receive exclusive 3D printed trophies customized to their finishes. Each one is unique to each race winner.</p>
-    </article>
-  </section>
 
-  <footer class="footer">
-    <p>Follow us on <a href="https://facebook.com" target="_blank"><img src="facebook.jpg" class="facebook-logo" alt="Facebook"></a></p>
-    <p>&copy; 2025 Smoky Mtn Sim Racing</p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="facebook.jpg" alt="Facebook" style="width:22px;height:22px;object-fit:contain;" />
+          <span>Follow on Facebook</span>
+        </a>
+      </div>
+      <div class="copyright">&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</div>
+    </div>
   </footer>
-
-  <!-- Toggle Menu Script -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const toggle = document.getElementById('menuToggle');
-      const nav = document.getElementById('navbarMenu');
-
-      nav.classList.remove('open'); // Ensure menu is closed on load
-
-      toggle.addEventListener('click', function () {
-        nav.classList.toggle('open');
-      });
-    });
-  </script>
 </body>
 </html>

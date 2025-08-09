@@ -3,98 +3,299 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Full race schedule for Smoky Mtn Sim Racing's iRacing league." />
-  <title>Schedule | Smoky Mtn Sim Racing</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
-</head>
-</head><!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
 
-  gtag('config', 'G-VH04WT6FG2');
-</script>
+  <title>Schedule | Smoky Mtn Sim Racing</title>
+  <meta name="description" content="Full race schedule for Smoky Mtn Sim Racing's iRacing league." />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Titillium+Web:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="icon" href="favicon.ico" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="SMSR Schedule" />
+  <meta property="og:description" content="Thursdays • 9 PM ET • 17-race NASCAR-style iRacing season." />
+  <meta property="og:image" content="theogteam.jpg" />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#ff0000" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VH04WT6FG2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-VH04WT6FG2');
+  </script>
+
+  <style>
+    :root{
+      --primary:#ff0000;
+      --text:#ffffff;
+      --bg:#0a0a0a;
+      --panel:rgba(255,255,255,.06);
+      --panel-2:rgba(255,255,255,.08);
+      --muted:#bdbdbd;
+      --ring:0 0 0 2px rgba(255,0,0,.35);
+      --shadow:0 10px 30px rgba(0,0,0,.45);
+      --ok:#18c964;
+      --warn:#ffb020;
+      --accent:#4da3ff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:'Titillium Web',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+      background:var(--bg); color:var(--text); line-height:1.6; overflow-x:hidden;
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    /* Sticky nav (same as home) */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      background:rgba(0,0,0,.85);
+      backdrop-filter:saturate(140%) blur(8px);
+      border-bottom:2px solid var(--primary);
+      box-shadow:0 4px 24px rgba(0,0,0,.4);
+    }
+    .nav .wrap{
+      max-width:1200px; margin:0 auto; padding:.75rem 1rem;
+      display:flex; align-items:center; justify-content:space-between; gap:1rem;
+    }
+    .brand{
+      font-family:'Orbitron', sans-serif;
+      font-weight:800; letter-spacing:.5px; font-size:1.1rem;
+      display:flex; align-items:center; gap:.6rem;
+    }
+    .brand::before{
+      content:""; width:10px; height:10px; border-radius:2px; background:var(--primary);
+      box-shadow:0 0 10px var(--primary);
+    }
+    .nav-links{display:flex; gap:1rem; align-items:center}
+    .nav-links a{
+      padding:.55rem .9rem; border-radius:8px; font-weight:700; letter-spacing:.2px;
+      transition:.2s ease; color:#f3f3f3;
+    }
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"]{
+      background:var(--primary); color:#000; box-shadow:var(--ring);
+    }
+    .hamburger{display:none; flex-direction:column; gap:5px; cursor:pointer}
+    .hamburger span{width:26px;height:3px;background:var(--primary);border-radius:2px}
+    @media (max-width: 860px){
+      .nav-links{display:none; position:absolute; left:0; right:0; top:100%; background:#0f0f0f; border-bottom:1px solid rgba(255,255,255,.08); flex-direction:column; padding:1rem}
+      .nav-links.show{display:flex}
+      .hamburger{display:flex}
+    }
+
+    /* Header / backdrop (same image vibe as home) */
+    header.site-header{
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.55) 0%, rgba(0,0,0,.88) 60%),
+        url('ChatGPT Image Jul 31, 2025, 08_22_00 PM.png') center/cover no-repeat;
+      border-bottom:1px solid rgba(255,255,255,.08);
+    }
+
+    /* Container */
+    .container{max-width:1200px;margin:0 auto;padding:0 1rem}
+
+    /* Hero (matches home card style) */
+    .hero{
+      max-width:1200px; margin:0 auto; padding:4.5rem 1rem 2.2rem;
+      display:grid; grid-template-columns:1.1fr .9fr; gap:2rem; align-items:center;
+    }
+    .hero-card{
+      background:var(--panel-2); border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; padding:2rem; box-shadow:var(--shadow);
+    }
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:.5rem; font-weight:700;
+      color:#fff; letter-spacing:.3px; background:rgba(255,0,0,.12);
+      border:1px solid rgba(255,0,0,.35); border-radius:999px;
+      padding:.35rem .75rem; margin-bottom:1rem;
+    }
+    .hero h1{
+      font-family:'Orbitron', sans-serif; font-size:clamp(2rem, 3.6vw, 3rem);
+      line-height:1.1; margin-bottom:.7rem; text-shadow:0 0 10px rgba(255,0,0,.2);
+    }
+    .subtitle{color:#e8e8e8; font-size:1.05rem}
+    .keyline{height:2px; width:64px; background:var(--primary); margin:1.2rem 0}
+
+    .hero-side{display:grid; gap:1rem}
+    .badge-row{display:grid; grid-template-columns:repeat(2,1fr); gap:1rem}
+    .badge{background:var(--panel); border:1px solid rgba(255,255,255,.08); border-radius:14px; padding:1rem 1.1rem}
+    .badge b{color:#fff}
+    .badge small{color:var(--muted)}
+
+    /* Highlight strip (same as home) */
+    .strip{margin:2.2rem 0; background:#0f0f0f; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08)}
+    .strip .wrap{max-width:1200px; margin:0 auto; padding:1rem; display:grid; grid-template-columns:repeat(4,1fr); gap:.8rem}
+    .pill{background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:999px; padding:.65rem .9rem; text-align:center; font-weight:700}
+    @media (max-width:900px){.strip .wrap{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:640px){.hero{grid-template-columns:1fr}}
+
+    /* Schedule table */
+    .section{max-width:1200px; margin:0 auto; padding:0 1rem 2.5rem}
+    .table-wrap{
+      background:var(--panel-2);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:16px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    table.schedule{
+      width:100%; border-collapse:separate; border-spacing:0;
+      font-size:1rem;
+    }
+    thead th{
+      text-align:left; font-family:'Orbitron', sans-serif; letter-spacing:.3px;
+      background:rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.12);
+      padding:0.9rem 1rem; position:sticky; top:0;
+    }
+    tbody td{padding:0.85rem 1rem; border-bottom:1px solid rgba(255,255,255,.06); color:#e9e9e9}
+    tbody tr:hover{background:rgba(255,255,255,.05)}
+    tbody tr:last-child td{border-bottom:0}
+
+    /* Round badges */
+    .tag{display:inline-block; padding:.25rem .55rem; border-radius:999px; font-size:.85rem; font-weight:800; letter-spacing:.2px}
+    .regular .tag{background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18)}
+    .r15 .tag{background:rgba(255,0,0,.14); border:1px solid rgba(255,0,0,.4)}
+    .r10 .tag{background:rgba(77,163,255,.18); border:1px solid rgba(77,163,255,.45)}
+    .champ .tag{background:rgba(24,201,100,.18); border:1px solid rgba(24,201,100,.45)}
+
+    /* Left accent bar per round */
+    tbody tr{position:relative}
+    tbody tr::before{
+      content:""; position:absolute; left:0; top:0; bottom:0; width:4px; opacity:.9;
+    }
+    tbody tr.regular::before{background:rgba(255,255,255,.22)}
+    tbody tr.r15::before{background:var(--primary)}
+    tbody tr.r10::before{background:var(--accent)}
+    tbody tr.champ::before{background:var(--ok)}
+
+    /* Footer (same vibe as home) */
+    footer{border-top:2px solid var(--primary); background:#0d0d0d; margin-top:2.5rem}
+    .footer-wrap{max-width:1200px; margin:0 auto; padding:1.2rem; display:flex; justify-content:space-between; align-items:center; gap:1rem; flex-wrap:wrap}
+    .social a{display:inline-flex; align-items:center; gap:.5rem; padding:.5rem .7rem; background:rgba(255,255,255,.06); border:1px solid rgba(255,255,255,.1); border-radius:999px}
+    .copyright{color:#d5d5d5; font-size:.95rem}
+  </style>
+</head>
 <body>
-  <header class="header" role="banner">
-    <div class="container">
-      <h1 id="site-title">Smoky Mtn Sim Racing</h1>
-      <button class="hamburger" aria-label="Toggle menu">&#9776;</button>
-      <nav class="main-nav" aria-label="Main navigation">
-        <ul class="nav-list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="standings.html">Standings</a></li>
-          <li><a href="schedule.html" class="active">Schedule</a></li>
-          <li><a href="News.html">News</a></li>
-          <li><a href="gallery.html">Gallery</a></li>
-          <li><a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a></li>
-        </ul>
-      </nav>
+  <!-- NAV (identical to home) -->
+  <nav class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html">SMOKY MTN SIM RACING</a>
+
+      <div class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="primary-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="nav-links" id="primary-nav" role="navigation" aria-label="Main">
+        <a href="index.html">Home</a>
+        <a href="standings.html">Standings</a>
+        <a href="schedule.html" aria-current="page">Schedule</a>
+        <a href="news.html">News</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="https://discord.gg/ghdejQByGx" target="_blank" rel="noopener">Discord</a>
+      </div>
     </div>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <section class="hero">
+      <div class="hero-card">
+        <span class="eyebrow">📅 Season Starts Feb 12</span>
+        <h1>2026 Season Schedule</h1>
+        <div class="keyline"></div>
+        <p class="subtitle">Thursdays • 9 PM ET • 17 Races • Fixed Setups • Pro Broadcast</p>
+      </div>
+
+      <aside class="hero-side">
+        <div class="badge-row">
+          <div class="badge"><b>🕘 Time</b><br><small>Thursdays, 9:00 PM ET</small></div>
+          <div class="badge"><b>🛡️ iRating</b><br><small>1500–6000 window</small></div>
+          <div class="badge"><b>🎥 Broadcast</b><br><small>YouTube every week</small></div>
+          <div class="badge"><b>🏆 Prizes</b><br><small>Cash + 3D trophies</small></div>
+        </div>
+      </aside>
+    </section>
   </header>
 
- <main>
-  <section class="container" style="text-align: center; padding: 3rem 1rem;">
-    <h2>2026 Season Schedule</h2>
-    <p class="schedule-intro">
-  Mark your calendars! Here's the full race schedule for the season starting February 12th at 9 PM. Follow the action every Thursday night!
-</p>
+  <!-- STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="pill">🔧 Fixed Setups</div>
+      <div class="pill">📺 Pro Broadcast</div>
+      <div class="pill">🏁 Clean, Competitive Racing</div>
+      <div class="pill">📆 Weekly on Thursdays</div>
+    </div>
+  </div>
 
-    <div style="overflow-x: auto; margin-top: 0rem;">
-      <table style="width: 100%; max-width: 900px; margin: 0 auto; border-collapse: collapse; color: white; background-color: #1a1a1a;">
-        <thead style="background-color: #ff0000;">
-          <tr>
-            <th style="padding: 12px; border: 1px solid #333;">Race #</th>
-            <th style="padding: 12px; border: 1px solid #333;">Date</th>
-            <th style="padding: 12px; border: 1px solid #333;">Track</th>
-            <th style="padding: 12px; border: 1px solid #333;">Round</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="regular"><td>1</td><td>Feb 12</td><td>Daytona</td><td>Regular</td></tr>
-          <tr><td>2</td><td>Feb 19</td><td>Las Vegas</td><td>Regular</td></tr>
-          <tr><td>3</td><td>Feb 26</td><td>Dover</td><td>Regular</td></tr>
-          <tr><td>4</td><td>Mar 5</td><td>Texas</td><td>Regular</td></tr>
-          <tr><td>5</td><td>Mar 12</td><td>Sonoma</td><td>Regular</td></tr>
-          <tr><td>6</td><td>Mar 19</td><td>Nashville</td><td>Regular</td></tr>
-          <tr><td>7</td><td>Mar 26</td><td>Atlanta</td><td>Regular</td></tr>
-          <tr><td>8</td><td>Apr 2</td><td>Pocono</td><td>Regular</td></tr>
-          <tr><td>9</td><td>Apr 9</td><td>Watkins Glen</td><td>Regular</td></tr>
-          <tr><td>10</td><td>Apr 16</td><td>Richmond</td><td>Regular</td></tr>
-          <tr><td>11</td><td>Apr 23</td><td>Michigan</td><td>Regular</td></tr>
-          <tr><td>12</td><td>Apr 30</td><td>Charlotte</td><td>Regular</td></tr>
-          <tr class="Round-of-15"><td>13</td><td>May 7</td><td>Talladega</td><td>Round of 15</td></tr>
-          <tr class="Round-of-15" ><td>14</td><td>May 14</td><td>Darlington</td><td>Round of 15</td></tr>
-          <tr class="Round-of-10"><td>15</td><td>May 21</td><td>Kansas</td><td>Round of 10</td></tr>
-          <tr class="Round-of-10"><td>16</td><td>May 28</td><td>Bristol</td><td>Round of 10</td></tr>
-          <tr class="Championship"><td>17</td><td>June 11 </td><td>Homestead</td><td>Championship</td></tr>
-        </tbody>
-      </table>
-    </div>
+  <!-- SCHEDULE -->
+  <main class="section">
+    <div class="container" style="margin-bottom:1rem;">
+      <p style="color:#e6e6e6;text-align:center;">Mark your calendars. Season opens at Daytona on <b>Feb 12</b>. Races run every Thursday night.</p>
+    </div>
 
-    
-  </section>
-</main>
+    <div class="table-wrap">
+      <table class="schedule" aria-describedby="sched-note">
+        <thead>
+          <tr>
+            <th scope="col">Race #</th>
+            <th scope="col">Date</th>
+            <th scope="col">Track</th>
+            <th scope="col">Round</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="regular"><td>1</td><td>Feb 12</td><td>Daytona</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>2</td><td>Feb 19</td><td>Las Vegas</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>3</td><td>Feb 26</td><td>Dover</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>4</td><td>Mar 5</td><td>Texas</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>5</td><td>Mar 12</td><td>Sonoma</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>6</td><td>Mar 19</td><td>Nashville</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>7</td><td>Mar 26</td><td>Atlanta</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>8</td><td>Apr 2</td><td>Pocono</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>9</td><td>Apr 9</td><td>Watkins Glen</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>10</td><td>Apr 16</td><td>Richmond</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>11</td><td>Apr 23</td><td>Michigan</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="regular"><td>12</td><td>Apr 30</td><td>Charlotte</td><td><span class="tag">Regular</span></td></tr>
+          <tr class="r15"><td>13</td><td>May 7</td><td>Talladega</td><td><span class="tag">Round of 15</span></td></tr>
+          <tr class="r15"><td>14</td><td>May 14</td><td>Darlington</td><td><span class="tag">Round of 15</span></td></tr>
+          <tr class="r10"><td>15</td><td>May 21</td><td>Kansas</td><td><span class="tag">Round of 10</span></td></tr>
+          <tr class="r10"><td>16</td><td>May 28</td><td>Bristol</td><td><span class="tag">Round of 10</span></td></tr>
+          <tr class="champ"><td>17</td><td>Jun 11</td><td>Homestead</td><td><span class="tag">Championship</span></td></tr>
+        </tbody>
+      </table>
+    </div>
 
+    <div id="sched-note" class="container" style="color:#bdbdbd;font-size:.95rem;margin-top:.8rem;text-align:center;">
+      All races start at <b>9:00 PM ET</b>. Schedule subject to change with notice in Discord.
+    </div>
+  </main>
 
-  <footer class="footer" role="contentinfo">
-    <div class="container">
-      <p>&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</p>
-      <p><a href="#">Back to Top</a></p>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wrap">
+      <div class="social">
+        <a href="https://facebook.com" target="_blank" rel="noopener">
+          <img src="facebook.jpg" alt="Facebook" style="width:22px;height:22px;object-fit:contain;" />
+          <span>Follow on Facebook</span>
+        </a>
+      </div>
+      <div class="copyright">&copy; 2025 Smoky Mtn Sim Racing. All rights reserved.</div>
     </div>
   </footer>
 
   <script>
-    // Mobile nav toggle
-    const hamburger = document.querySelector(".hamburger");
-    const navList = document.querySelector(".nav-list");
-
-    hamburger.addEventListener("click", () => {
-      navList.classList.toggle("nav-open");
-    });
+    // Mobile nav toggle (same behavior as home)
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('primary-nav');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        const show = navLinks.classList.toggle('show');
+        hamburger.setAttribute('aria-expanded', show ? 'true' : 'false');
+      });
+    }
   </script>
 </body>
 </html>
